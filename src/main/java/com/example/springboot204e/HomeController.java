@@ -10,18 +10,18 @@ import javax.validation.Valid;
 
 @Controller
 public class HomeController {
-    @GetMapping("/tvform")
+    @GetMapping("/carform")
     public String loadTvForm(Model model) {
-        model.addAttribute("tvshow", new Tvshow());
-        return "tvform";
+        model.addAttribute("car", new Car());
+        return "carform";
     }
 
-    @PostMapping("/tvform")
-    public String processTvForm(@Valid Tvshow tvshow,
+    @PostMapping("/carform")
+    public String processTvForm(@Valid Car car,
                                 BindingResult result) {
         if (result.hasErrors()) {
-            return "tvform";
+            return "carform";
         }
-        return "tvshowconfirm";
+        return "carconfirm";
     }
 }
